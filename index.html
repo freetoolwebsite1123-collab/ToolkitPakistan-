@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>TEAM CRAY HAT 🥵</title>
+  <style>
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    body { font-family: Arial, sans-serif; background: #000; overflow-y: auto; color: #fff; min-height: 100vh; }
+    html { overflow-y: auto; }
+    canvas { position: fixed; top: 0; left: 0; z-index: -1; }
+    .container { max-width: 450px; margin: 70px auto; background: rgba(0, 0, 0, 0.85); border: 2px solid #00ffe7; border-radius: 18px; padding: 30px 25px; box-shadow: 0 0 50px #00ffe7; text-align: center; animation: fadeIn 1s ease-out; }
+    @keyframes fadeIn { 0% { transform: translateY(-40px); opacity: 0; } 100% { transform: translateY(0); opacity: 1; } }
+    h1 { color: #00ffe7; font-size: 32px; text-shadow: 0 0 10px #00ffe7, 0 0 20px #00ffe7; margin-bottom: 10px; }
+    .subtitle { font-size: 15px; color: #ccc; margin-bottom: 25px; }
+    .btn { display: flex; align-items: center; justify-content: center; width: 100%; margin: 10px 0; padding: 14px 20px; border: 2px solid #00ffe7; background: transparent; color: #00ffe7; border-radius: 12px; font-size: 17px; font-weight: bold; cursor: pointer; text-decoration: none; transition: all 0.3s ease; box-shadow: 0 0 10px transparent; }
+    .btn:hover { background: #00ffe7; color: #000; transform: scale(1.05); box-shadow: 0 0 25px #00ffe7; }
+    .yt-btn { border: 2px solid #ff0000; color: #ff0000; box-shadow: 0 0 15px #ff0000; }
+    .yt-btn:hover { background: #ff0000; color: #fff; box-shadow: 0 0 25px #ff0000; }
+    .yt-icon { margin-right: 10px; font-size: 20px; color: inherit; }
+    .footer { text-align: center; font-size: 12px; color: #666; margin-top: 25px; }
+  </style>
+
+  <script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script>
+</head>
+<body>
+
+<canvas id="bg"></canvas>
+
+<div class="container">
+  <h1>🔥ALYAN-HACKER</h1>
+  <div class="subtitle">WELCOME TO TEAM CRAY HAT TOOLKIT</div>
+
+  <a href="https://youtube.com/@crayhathcaker_offcial?si=-vKnf771706riDTU" 
+     class="btn yt-btn" target="_blank">
+     <i class="fab fa-youtube yt-icon"></i> SUBSCRIBE MY YOUTUBE
+  </a>
+
+  <div class="tool-box">
+    <div class="btn">🔥 Tik Tok USA Acount Tool 1</div>
+    <a href="https://www.mediafire.com/file/4hhckbdjpqy4mwv/TikTok_USA_account_making.7z/file" class="btn">🔗 Open Tool</a>
+    <div class="btn">🔥 Phone Dead  Virus Tool 2</div>
+    <a href="https://www.mediafire.com/file/in413nyxxyhq1ob/car_collication.apk/file" class="btn">🔗 Open Tool</a>
+    <div class="btn">🔥 Pishing Page Tool 3</div>
+    <a href="https://www.mediafire.com/file/q6d9irj5jy5hpeo/VID-20230806-WA0113.mp4/file" class="btn">🔗 Open Tool</a>
+    <!-- باقی کے 17 tools بھی اسی structure میں ہیں -->
+  </div>
+
+  <div class="footer">©2025 All Copyright Powered by ALYAN-HACKER</div>
+</div>
+
+<script>
+  const canvas = document.getElementById("bg");
+  const ctx = canvas.getContext("2d");
+  canvas.height = window.innerHeight;
+  canvas.width = window.innerWidth;
+  const matrix = "01";
+  const fontSize = 16;
+  const columns = canvas.width / fontSize;
+  const drops = Array.from({ length: columns }).fill(1);
+
+  function draw() {
+    ctx.fillStyle = "rgba(0, 0, 0, 0.07)";
+    ctx.fillRect(0, 0, canvas.width, canvas.height);
+    ctx.fillStyle = "#00ffe7";
+    ctx.font = fontSize + "px monospace";
+    for (let i = 0; i < drops.length; i++) {
+      const text = matrix[Math.floor(Math.random() * matrix.length)];
+      ctx.fillText(text, i * fontSize, drops[i] * fontSize);
+      if (drops[i] * fontSize > canvas.height && Math.random() > 0.975) { drops[i] = 0; }
+      drops[i]++;
+    }
+  }
+
+  setInterval(draw, 35);
+
+  window.addEventListener('resize', () => {
+    canvas.width = window.innerWidth;
+    canvas.height = window.innerHeight;
+  });
+</script>
+
+</body>
+</html>
